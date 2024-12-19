@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Diagnosis</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Proactive Diagnosis of Parkinson's Disease</h1>
+        <form action="/predict" method="post">
+            <label for="feature1">Feature 1: </label>
+            <input type="text" id="feature1" name="feature1" placeholder="Enter feature 1" required>
+            
+            <label for="feature2">Feature 2: </label>
+            <input type="text" id="feature2" name="feature2" placeholder="Enter feature 2" required>
+            
+            <label for="feature3">Feature 3: </label>
+            <input type="text" id="feature3" name="feature3" placeholder="Enter feature 3" required>
+            
+            <label for="feature4">Feature 4: </label>
+            <input type="text" id="feature4" name="feature4" placeholder="Enter feature 4" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h2>Diagnosis Result:</h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
